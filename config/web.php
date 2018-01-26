@@ -7,7 +7,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'name' => 'Gestion de Usuarios Yii2 - Ramon Abramo',
+    'name' => 'Gestion de Tareas',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
@@ -22,6 +22,7 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'NaTbwQdnp2tNvxTPKMzsoJCc74qXIwtr',
+            'enableCsrfValidation'=>false,
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',

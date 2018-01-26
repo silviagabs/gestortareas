@@ -123,6 +123,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface {
 
         return false;
     }
+    
 
     public function afterSave($insert) {
         // entra solamente si es insercion y no actualizacion
@@ -135,6 +136,14 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface {
                     ->setSubject("Terminar el registro")
                     ->setHtmlBody($body)
                     ->send();
+        }
+    }
+    
+    public static function isAdmin(){
+        if(!Yii::$app->user->isGuest){
+            return Yii::$app->user->identity->admin;
+        }else{
+          return 0;
         }
     }
 

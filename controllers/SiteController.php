@@ -73,8 +73,10 @@ class SiteController extends Controller {
         // en caso de intentar realizar un logueo
 
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+           // var_dump($model);
+          //  exit;
             // si es correcto volvemos a la pagina anterior
-            return $this->goBack();
+            return $this->redirect(["tareas/index", 'username'=>Yii::$app->user->identity->username]);
         }
 
         // en caso de que el logueo no sea correcto no entramos
