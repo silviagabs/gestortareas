@@ -37,7 +37,7 @@ class Tareas extends \yii\db\ActiveRecord
             [['nombre', 'categoria', 'prioridad', 'fecha_inicio', 'fecha_fin', 'propietario'], 'required'],
             [['fecha_inicio', 'fecha_fin'], 'safe'],
             [['nombre', 'descripcion', 'categoria', 'prioridad', 'propietario'], 'string', 'max' => 255],
-            [['propietario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuarios::className(), 'targetAttribute' => ['propietario' => 'username']],
+            [['propietario'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['propietario' => 'username']],
         ];
     }
 

@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Enviar Correo Electrónico';
+$this->title = 'FORMULARIO de CONTACTO';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php }else{ ?>
 
         <p>
-            Para ponerte en contacto con nosotros envíanos un formulario
+            Para ponerte en contacto con nosotros rellena este formulario
         </p>
 
         <div class="row">
@@ -50,6 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php ActiveForm::end(); ?>
 
             </div>
+            <div class="col-lg-5"></div>
         </div>
 
     <?php } ?>
