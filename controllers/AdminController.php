@@ -12,6 +12,7 @@ use app\models\ContactForm;
 use app\models\User;
 use yii\widgets\ActiveForm;
 use app\models\Tareas;
+use yii\data\ActiveDataProvider;
 
 class AdminController extends Controller {
 
@@ -64,18 +65,30 @@ class AdminController extends Controller {
         return $this->render('index');
     }
     
-    public function actionListar()
+    public function actionTareas()
     {
         
         $dataProvider = new ActiveDataProvider([
             'query' => Tareas::find(),
         ]);
                 
-        return $this->render('listar', [
+        return $this->render('tareas', [
             'dataProvider' => $dataProvider,
         ]);
     }
-
+    
+     public function actionUsuarios()
+    {
+        
+        $dataProvider = new ActiveDataProvider([
+            'query' => User::find(),
+        ]);
+                
+        return $this->render('usuarios', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+    
     public function actionLogin() {
         // en caso de no estar logueado nos colocamos en la pagina de inicio
         if (!Yii::$app->user->isGuest) {

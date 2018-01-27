@@ -97,7 +97,8 @@ AppAsset::register($this);
             'options' => ['class' => 'navbar-nav'],
             'items' => [
                 ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'Tareas', 'url' => ['/admin/listar']],
+                ['label' => 'Tareas', 'url' => ['/admin/tareas']],
+                ['label' => 'Usuarios', 'url' => ['/admin/usuarios']],
                             
                         '<li>'
                         . Html::beginForm(['/site/logout'], 'post')

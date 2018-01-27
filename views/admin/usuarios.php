@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Mis Tareas';
+$this->title = 'USUARIOS';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tareas-index">
@@ -19,22 +19,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
-            'id_tarea',
+            'id',
             [
 
-                'attribute' => 'nombre',
+                'attribute' => 'username',
                 'format' => 'html',
                 'value' => function($model) {
-                    return Html::a($model->nombre, ['tareas/view', 'id' => $model->id_tarea]);
+                    return Html::a(strtoupper($model->username), ['tareas/view', 'id' => $model->id]);
                 }
                     ],
-            'descripcion',
-            'categoria',
-            'prioridad',
-            'fecha_inicio',
-            'fecha_fin',
-            'propietario',
-
+            'nombre',
+            'apellidos',
+            'email',
+            'activo',
+            
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
