@@ -6,6 +6,10 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+if(Yii::$app->user->identity->admin){
+    echo " <h1 class='text-center'>BIENVENIDO ADMINISTRADOR </h1>";
+}
+else{
 $this->title = 'Mis Tareas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -40,5 +44,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]); 
+}?>
 </div>

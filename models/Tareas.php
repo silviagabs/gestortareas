@@ -63,7 +63,7 @@ class Tareas extends \yii\db\ActiveRecord
      */
     public function getPropietario0()
     {
-        return $this->hasOne(Usuarios::className(), ['username' => 'propietario']);
+        return $this->hasOne(User::className(), ['username' => 'propietario']);
     }
 
     /**

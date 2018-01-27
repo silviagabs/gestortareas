@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 $form = ActiveForm::begin(['id' => 'contact-form']);
 
                 if (!Yii::$app->user->isGuest) {
-                    echo $form->field($model, 'name')->textInput(['value' => $model->username, 'readonly'=>true]);
+                    echo $form->field($model, 'name')->textInput(['value' => Yii::$app->user->identity->username, 'readonly'=>true]);
                 } else {
                     echo $form->field($model, 'name')->textInput(['autofocus' => true]);
                 }
