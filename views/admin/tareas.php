@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'nombre',
                 'format' => 'html',
                 'value' => function($model) {
-                    return Html::a(strtoupper($model->nombre), ['tareas/view', 'id' => $model->id_tarea]);
+                    return Html::a(strtoupper($model->nombre), ['admin/view', 'id' => $model->id_tarea]);
                 }
                     ],
             'descripcion',
