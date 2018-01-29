@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "rmrevin/yii2-fontawesome": "~2.17",
         "yiisoft/yii2-jui": "~2.0.0",
-        "yii2mod/yii2-google-maps-markers": "*"
+        "yii2mod/yii2-google-maps-markers": "*",
+        "2amigos/yii2-date-picker-widget" : "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
