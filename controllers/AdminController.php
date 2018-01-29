@@ -13,13 +13,12 @@ use yii\filters\VerbFilter;
 /**
  * AdminController implements the CRUD actions for User model.
  */
-class AdminController extends Controller
-{
+class AdminController extends Controller {
+
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -34,43 +33,37 @@ class AdminController extends Controller
      * Lists all User models.
      * @return mixed
      */
-    
-     public function actionIndex() {
+    public function actionIndex() {
         return $this->render('index');
     }
-    
-    public function actionTareas()
-    {
-        
+
+    public function actionTareas() {
+
         $dataProvider = new ActiveDataProvider([
             'query' => Tareas::find(),
         ]);
-                
+
         return $this->render('tareas', [
-            'dataProvider' => $dataProvider,
+                    'dataProvider' => $dataProvider,
         ]);
     }
-    
-     public function actionUsuarios()
-    {
-        
+
+    public function actionUsuarios() {
+
         $dataProvider = new ActiveDataProvider([
             'query' => User::find(),
         ]);
-                
+
         return $this->render('usuarios', [
-            'dataProvider' => $dataProvider,
+                    'dataProvider' => $dataProvider,
         ]);
     }
-    
-    public function actionViewTareas($id)
-    {
-        
-        return $this->render('view', [
-            'model' => $this->findModel($id),
+
+    public function actionViewtareas($id) {
+        return $this->render('viewtareas', [
+                    'model' => $this->findModelTareas($id),
         ]);
     }
-    
 
     /**
      * Displays a single User model.
@@ -78,10 +71,9 @@ class AdminController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
-    {
+    public function actionView($id) {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -90,8 +82,7 @@ class AdminController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new User();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -99,7 +90,7 @@ class AdminController extends Controller
         }
 
         return $this->render('create', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
@@ -110,16 +101,31 @@ class AdminController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
+    public function actionUpdate($id) {
 
+        $model = $this->findModel($id);
+        $model->scenario = 'actualizar';
+        // var_dump($model->scenario);
+        //exit;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['usuarios', 'id' => $model->id]);
         }
 
         return $this->render('update', [
-            'model' => $model,
+                    'model' => $model,
+        ]);
+    }
+
+    public function actionUpdatetareas($id) {
+
+        $model = $this->findModelTareas($id);
+       
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['tareas', 'id' => $model->id_tarea]);
+        }
+
+        return $this->render('updatetareas', [
+                    'model' => $model,
         ]);
     }
 
@@ -130,11 +136,16 @@ class AdminController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
-    {
+    public function actionDelete($id) {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['usuarios']);
+    }
+    
+     public function actionDeletetareas($id) {
+        $this->findModelTareas($id)->delete();
+
+        return $this->redirect(['tareas']);
     }
 
     /**
@@ -144,12 +155,20 @@ class AdminController extends Controller
      * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
-    {
+    protected function findModel($id) {
         if (($model = User::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('La página que buscas no existe.');
     }
+
+    protected function findModelTareas($id) {
+        if (($model = Tareas::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('La página que buscas no existe.');
+    }
+
 }
