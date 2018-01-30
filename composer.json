@@ -21,13 +21,13 @@
         "rmrevin/yii2-fontawesome": "~2.17",
         "yiisoft/yii2-jui": "~2.0.0",
         "yii2mod/yii2-google-maps-markers": "*",
-        "2amigos/yii2-date-picker-widget" : "~1.0"
+        "2amigos/yii2-date-picker-widget": "~1.0",
+        "sjaakp/yii2-gcharts": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
-
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1",
         "codeception/specify": "~0.4.3"

@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use sjaakp\gcharts\PieChart;
+use sjaakp\gcharts\ColumnChart;
+
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -13,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-
-    <?=
+<!--
+    <?
     GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
@@ -38,5 +41,21 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]);
     ?>
+-->
+
+    <div>
+        <?= ColumnChart::widget([
+    'height' => '400px',
+    'dataProvider' => $dataProvider,
+    'columns' => [
+        'nombre:string',
+        'fecha_inicio',
+        'fecha_fin'
+    ],
+    'options' => [
+        'title' => 'TAREAS'
+    ],
+]) ?>
+    </div>
 
    
