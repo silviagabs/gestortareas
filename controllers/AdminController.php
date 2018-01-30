@@ -51,7 +51,7 @@ class AdminController extends Controller {
     public function actionUsuarios() {
 
         $dataProvider = new ActiveDataProvider([
-            'query' => User::find(),
+            'query' => User::find()->where(['admin'=>0]),
         ]);
 
         return $this->render('usuarios', [
@@ -104,7 +104,7 @@ class AdminController extends Controller {
     public function actionUpdate($id) {
 
         $model = $this->findModel($id);
-        $model->scenario = 'actualizar';
+        $model->scenario = 'admin';
         // var_dump($model->scenario);
         //exit;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

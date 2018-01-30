@@ -39,6 +39,8 @@ class TareasController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => Tareas::find()->where(['propietario'=>$username]),
         ]);
+        
+        
                 
         return $this->render('index', [
             'dataProvider' => $dataProvider,

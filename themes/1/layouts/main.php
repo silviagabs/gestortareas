@@ -139,13 +139,13 @@ AppAsset::register($this);
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="img-responsive img-full" src="https://i.imgur.com/dQ8HOjI.jpg" alt="">
+                                    <img class="img-responsive img-full" src="<?php echo $this->theme->baseUrl ?>/imgs/foto1.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="img-responsive img-full" src="https://i.imgur.com/2uAJKAT.jpg" alt="">
+                                    <img class="img-responsive img-full" src="<?php echo $this->theme->baseUrl ?>/imgs/foto2.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="img-responsive img-full" src="https://i.imgur.com/ikZTOxP.jpg" alt="">
+                                    <img class="img-responsive img-full" src="<?php echo $this->theme->baseUrl ?>/imgs/foto3.jpg" alt="">
                                 </div>
                             </div>
 

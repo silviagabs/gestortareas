@@ -25,12 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'username',
                 'format' => 'html',
                 'value' => function($model) {
-                    return Html::a(strtoupper($model->username), ['admin/view', 'id' => $model->id]);
+                    return (strtoupper($model->username));
                 }
                     ],
             'nombre',
             'apellidos',
-            'email',
+            'email:email',
             'activo',
             
             ['class' => 'yii\grid\ActionColumn'],

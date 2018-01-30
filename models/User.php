@@ -20,6 +20,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface {
         return [
             'crear'=>['password_repeat', 'password', 'nombre', 'apellidos', 'email', 'username', 'codigo'],
             'actualizar' => ['password', 'nombre', 'email', 'username', 'codigo'],
+            'admin'=>['password', 'nombre', 'apellidos', 'email', 'username', 'codigo', 'activo'],
         ];
     }
 
@@ -129,7 +130,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface {
         // entra solamente si es insercion y no actualizacion
         if ($insert) {
             $body = "<h1>Haga click en el siguiente enlace para finalizar tu registro</h1>";
-            $body .= "<a href='" . Yii::$app->params["direccion"] . Yii::$app->request->baseUrl . "/index.php/site/confirm?id=" . urlencode($this->id) . "&authKey=" . urlencode($this->authKey) . "'>Confirmar</a>";
+            $body .= "<a href='" . Yii::$app->params["direccion"] . Yii::$app->request->baseUrl . "/index.php/site/confirm?id=" . urlencode($this->id) . "&authKey=" . urlencode($this->authKey) . "'>CONFIRMAR REGISTRO</a>";
             Yii::$app->mailer->compose()
                     ->setTo($this->email)
                     ->setFrom([Yii::$app->params["adminEmail"] => Yii::$app->params["titulo"]])

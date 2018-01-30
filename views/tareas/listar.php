@@ -13,29 +13,30 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    
-    <?= GridView::widget([
+
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
             //['class' => 'yii\grid\SerialColumn'],
 
             'id_tarea',
             [
-
                 'attribute' => 'nombre',
                 'format' => 'html',
                 'value' => function($model) {
                     return Html::a($model->nombre, ['tareas/view', 'id' => $model->id_tarea]);
                 }
-                    ],
+            ],
             'descripcion',
             'categoria',
             'prioridad',
             'fecha_inicio',
             'fecha_fin',
             'propietario',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
-</div>
+    ]);
+    ?>
+
+   
