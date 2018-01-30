@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use sjaakp\gcharts\ColumnChart;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -47,3 +48,19 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); 
 }?>
 </div>
+
+<div>
+        <?= ColumnChart::widget([
+    'height' => '400px',
+    'dataProvider' => $dataProvider,
+    'columns' => [
+        'nombre:string',
+        'fecha_inicio:date',
+        'fecha_fin:date'
+    ],
+    'options' => [
+        'title' => 'ESTADO de las TAREAS',
+        
+    ],
+]) ?>
+    </div> 

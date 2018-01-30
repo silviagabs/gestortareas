@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * TareasController implements the CRUD actions for Tareas model.
  */
@@ -47,13 +48,15 @@ class TareasController extends Controller
         ]);
     }
 
+   
      public function actionListar()
     {
         
         $dataProvider = new ActiveDataProvider([
             'query' => Tareas::find(),
-        ]);
-                
+            ]);
+        
+      
         return $this->render('listar', [
             'dataProvider' => $dataProvider,
         ]);

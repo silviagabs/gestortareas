@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use sjaakp\gcharts\PieChart;
 use sjaakp\gcharts\ColumnChart;
+use sjaakp\timeline\Timeline;
 
 
 /* @var $this yii\web\View */
@@ -43,19 +44,17 @@ $this->params['breadcrumbs'][] = $this->title;
     ?>
 -->
 
-    <div>
+<div>
         <?= ColumnChart::widget([
     'height' => '400px',
     'dataProvider' => $dataProvider,
     'columns' => [
         'nombre:string',
-        'fecha_inicio',
-        'fecha_fin'
+        'fecha_inicio:date',
+        'fecha_fin:date'
     ],
     'options' => [
         'title' => 'TAREAS'
     ],
 ]) ?>
-    </div>
-
-   
+    </div> 
