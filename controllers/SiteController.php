@@ -74,8 +74,10 @@ class SiteController extends Controller {
 
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             // si es correcto redirigimos a su página de inicio
-           
+           if(!User::isAdmin()){
             return $this->redirect(["tareas/index", 'username'=>Yii::$app->user->identity->username]);
+           }
+           return $this->redirect(["site/index"]);
         }
 
         // en caso de que el logueo no sea correcto no entramos

@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-<!--
-    <?
+
+    <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
@@ -42,19 +42,3 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]);
     ?>
--->
-
-<div>
-        <?= ColumnChart::widget([
-    'height' => '400px',
-    'dataProvider' => $dataProvider,
-    'columns' => [
-        'nombre:string',
-        'fecha_inicio:date',
-        'fecha_fin:date'
-    ],
-    'options' => [
-        'title' => 'TAREAS'
-    ],
-]) ?>
-    </div> 
