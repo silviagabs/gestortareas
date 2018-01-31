@@ -1,10 +1,17 @@
 {
-    "name": "yiisoft/yii2-app-basic",
+    "name": "silviagabs/gestortareas",
     "description": "Yii 2 Basic Project Template",
     "keywords": ["yii2", "framework", "basic", "project template"],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
     "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Silvia",
+            "homepage": "http://www.alpeformacion.es",
+            "role": "Alumn@"
+        }
+    ],
     "support": {
         "issues": "https://github.com/yiisoft/yii2/issues?state=open",
         "forum": "http://www.yiiframework.com/forum/",

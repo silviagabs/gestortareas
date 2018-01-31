@@ -6,8 +6,8 @@
   <ConnectionName>localhost</ConnectionName>
   <ConnectionString>User Id=root;Host=localhost;Character Set=utf8</ConnectionString>
   <Database>gestortareas</Database>
-  <OutputDirectory>C:\Users\Silvia\Documents\dbForge Studio for MySQL\Export</OutputDirectory>
-  <BaseFileName>gestortareas1</BaseFileName>
+  <OutputDirectory>C:\Users\PACO_dropbox\Documents\dbForge Studio for MySQL\Export</OutputDirectory>
+  <BaseFileName>gestortareas</BaseFileName>
   <Mode>All</Mode>
   <AppendTimestamp>True</AppendTimestamp>
   <MaxDays>0</MaxDays>
@@ -44,7 +44,7 @@
     <PropertyValue Name="IgnoreColumnDefaultValues">false</PropertyValue>
     <PropertyValue Name="IgnoreUdfs">true</PropertyValue>
     <PropertyValue Name="WriteLog">false</PropertyValue>
-    <PropertyValue Name="LogFileName" xml:space="preserve">C:\Users\Silvia\Documents\dbForge Studio for MySQL\Export\Backup.log</PropertyValue>
+    <PropertyValue Name="LogFileName" xml:space="preserve">C:\Users\PACO_dropbox\Documents\dbForge Studio for MySQL\Export\Backup.log</PropertyValue>
     <PropertyValue Name="ErrorHandlingMode">0</PropertyValue>
     <PropertyValue Name="IncludeDrop">true</PropertyValue>
     <PropertyValue Name="IncludeIfExists">true</PropertyValue>
