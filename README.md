@@ -55,8 +55,9 @@ return [
     'charset' => 'utf8',
 ];
 ```
-Se adjunta un backup y un sql de la bd utilizada. Se llama gestortareas.
-Tiene 4 usuarios que son los que sirven de ejemplo en la aplicación:
+Se adjunta un backup y un sql de la bd utilizada. Se llama gestortareas y está en la
+carpeta data.
+La bd tiene 4 usuarios creados que son los que sirven de ejemplo en la aplicación:
 USERNAME * PASSWORD 
     root * root
    user1 * user1
@@ -64,3 +65,8 @@ USERNAME * PASSWORD
    user3 * user3
 
 
+Una vez descargado, EJECUTA ESTE COMANDO:
+
+~~~
+composer update
+~~~
